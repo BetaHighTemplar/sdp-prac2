@@ -68,7 +68,7 @@ class AppTest {
 
         // 2 - negative
         List<Integer> a2 = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> b2 = Arrays.asList(-1, -2, -3);
+        List<Integer> b2 = Arrays.asList(-1, -2, -3, -4);
         assertEquals(0, simpleFunctions.sumElementsByIndexes(a2, b2));
 
         // 3 , Out-of-range
