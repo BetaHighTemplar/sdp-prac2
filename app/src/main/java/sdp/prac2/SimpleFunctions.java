@@ -49,4 +49,90 @@ public class SimpleFunctions {
         int remainder = number % 100;
         return number + (100 - remainder);
     }
+////////////////////////////////////////////////////////////////////////////////////////
+//Task 3
+class Item {
+    char value;
+    Item next;
+
+    Item(char value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class Listed {
+    private Item head;
+    private int count;
+
+    public Listed() {
+        this.head = null;
+        this.count = 0;
+    }
+
+    public void push(char value) {
+        Item newItem = new Item(value);
+        newItem.next = head;
+        head = newItem;
+        count++;
+    }
+
+    public char pop() {
+        if (head == null) {
+            return 'N';  // Using 'N' as a sentinel value
+        }
+        char value = head.value;
+        head = head.next;
+        count--;
+        return value;
+    }
+
+    public char check() {
+        if (head == null) {
+            return 'N';  // Using 'N' as a sentinel value
+        } else {
+            return head.value;
+        }
+    }
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public int length() {
+        return count;
+    }
+}
+
+public class Task3 {
+    public static boolean checkParenthesesBalance(String x) {
+        int openCount = 0;
+        int closeCount = 0;
+        Listed workAnswer = new Listed();
+
+        // Push each character of the input word to the stack
+        for (int i = 0; i < x.length(); i++) {
+            workAnswer.push(x.charAt(i));
+        }
+
+        // While the stack is not empty, pop characters and count open and close parentheses
+        while (!workAnswer.isEmpty()) {
+            char currentChar = workAnswer.pop();
+            if (currentChar == '(') {
+                openCount++;
+            } else if (currentChar == ')') {
+                closeCount++;
+            } else {
+                System.out.println("Not within scope of problem");
+                return false;
+            }
+        }
+
+        // Return whether the counts of open and close parentheses are equal
+        return openCount == closeCount;
+    }
+    
+}
+//origin g22m3878
+////////////////////////////////////////////////////////////////////////////////////////
 }
