@@ -45,7 +45,7 @@ public class SimpleFunctions {
             return number;
         }
 
-        // Otherwise, round it up to the next-highest multiple of 100
+        //  round it up to the next multiple of 100
         int remainder = number % 100;
         return number + (100 - remainder);
     }
