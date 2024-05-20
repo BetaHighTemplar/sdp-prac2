@@ -45,35 +45,17 @@ class AppTest {
         assertEquals(expectedOutput, result);
     }
 
-    //test case task 6
-     @Test
-    void testAddElementsAtIndexes() {
-        // Test case 1: Basic scenario
-        List<Integer> a1 = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> b1 = Arrays.asList(0, 2, 4);
-        assertEquals(9, Task7.addElementsAtIndexes(a1, b1), "Test case 1 failed");
+    // test case task 6
+    @Test
+    public void testRoundUpToMultipleOf100() {
+        List<Integer> input = Arrays.asList(50, 100, 150, 200, 250);
+        List<Integer> expectedOutput = Arrays.asList(100, 100, 200, 200, 300);
 
-        // Test case 2: Empty lists
-        List<Integer> a2 = Arrays.asList();
-        List<Integer> b2 = Arrays.asList();
-        assertEquals(0, Task7.addElementsAtIndexes(a2, b2), "Test case 2 failed");
+        List<Integer> actualOutput = SimpleFunctions.roundUpToMultipleOf100(input);
 
-        // Test case 3: Index out of range
-        List<Integer> a3 = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> b3 = Arrays.asList(0, 2, 5);
-        assertEquals(6, Task7.addElementsAtIndexes(a3, b3), "Test case 3 failed");
-
-        // Test case 4: Indexes with negative values
-        List<Integer> a4 = Arrays.asList(1, 2, 3, 4, 5);
-        List<Integer> b4 = Arrays.asList(-1, -2, -3);
-        assertEquals(0, Task7.addElementsAtIndexes(a4, b4), "Test case 4 failed");
-
-        // Test case 5: List with multiple indexes pointing to the same element
-        List<Integer> a5 = Arrays.asList(10, 20, 30, 40, 50);
-        List<Integer> b5 = Arrays.asList(1, 1, 1);
-        assertEquals(60, Task7.addElementsAtIndexes(a5, b5), "Test case 5 failed");
+        assertEquals(expectedOutput, actualOutput);
     }
+
     // Add other test cases here following the same pattern
     // ...
 }
-
