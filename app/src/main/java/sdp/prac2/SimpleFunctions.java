@@ -146,4 +146,31 @@ public class SimpleFunctions {
         
         return result;
     }
+    //Task 4
+ 
+
+    // Other methods...
+
+    public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
+        // Check if the sizes of lists a and b are equal
+        if (a.size() != b.size()) {
+            return null;
+        }
+
+        // Create a new list to store the results
+        List<Integer> result = new ArrayList<>();
+
+        // Iterate over the elements of lists a and b
+        for (int i = 0; i < a.size(); i++) {
+            // Multiply corresponding elements of lists a and b
+            int product = a.get(i) * b.get(b.size() - 1 - i);
+            // Add the result to the new list
+            result.add(product);
+        }
+
+        // Return the resulting list
+        return result;
+    }
+
+
 }
