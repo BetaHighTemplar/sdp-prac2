@@ -1,0 +1,16 @@
+public class Task5Test {
+    public static void main(String[] args) {
+        // Test Case 1: List is sorted
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+        System.out.println("Test Case 1: List is sorted");
+        System.out.println("Expected Result: true");
+        System.out.println("Actual Result: " + Task5.isSorted(sortedList));
+        System.out.println();
+        
+        // Test Case 2: List is not sorted
+        List<Integer> unsortedList = Arrays.asList(5, 3, 2, 1, 4);
+        System.out.println("Test Case 2: List is not sorted");
+        System.out.println("Expected Result: false");
+        System.out.println("Actual Result: " + Task5.isSorted(unsortedList));
+    }
+}
