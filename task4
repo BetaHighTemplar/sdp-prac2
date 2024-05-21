@@ -1,0 +1,21 @@
+
+public class Task4 {
+    public static List<Integer> task4(List<Integer> a, List<Integer> b) {
+        // Check if the lists have the same length
+        if (a.size() != b.size()) {
+            return null;
+        }
+        
+        // Initialize an empty list to store the results
+        List<Integer> result = new ArrayList<>();
+        
+        // Iterate over the elements of both lists simultaneously
+        for (int i = 0; i < a.size(); i++) {
+            // Multiply the corresponding elements and add the result to the result list
+            result.add(a.get(i) * b.get(b.size() - 1 - i));
+        }
+        
+        // Return the resulting list
+        return result;
+    }
+} 
