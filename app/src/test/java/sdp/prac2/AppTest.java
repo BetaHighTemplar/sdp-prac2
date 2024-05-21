@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import sdp.prac2.SimpleFunctions;
 
 public class AppTest {
 
@@ -81,4 +82,33 @@ public class AppTest {
         List<Integer> b4 = Arrays.asList(1, 3, 5, -1);
         assertEquals(60, simpleFunctions.sumElementsByIndexes(a4, b4));
     }
+ 
+    //Task 3 Test Cases
+    public void testCheckParenthesesBalance() {
+        // Test case 1: Balanced parentheses
+        String input1 = "(())";
+        assertTrue(SimpleFunctions.checkParenthesesBalance(input1));
+
+        // Test case 2: Unbalanced parentheses
+        String input2 = "(()";
+        assertFalse(SimpleFunctions.checkParenthesesBalance(input2));
+
+        // Test case 3: No parentheses
+        String input3 = "abcde";
+        assertFalse(SimpleFunctions.checkParenthesesBalance(input3));
+
+        // Test case 4: Empty string
+        String input4 = "";
+        assertTrue(SimpleFunctions.checkParenthesesBalance(input4));
+
+        // Test case 5: Only one parenthesis
+        String input5 = "(";
+        assertFalse(SimpleFunctions.checkParenthesesBalance(input5));
+
+        // Test case 6: Multiple parentheses with different balance
+        String input6 = "()())";
+        assertFalse(SimpleFunctions.checkParenthesesBalance(input6));
+    }
+    
+     
 }
