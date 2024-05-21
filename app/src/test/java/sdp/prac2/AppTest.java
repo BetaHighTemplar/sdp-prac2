@@ -81,4 +81,34 @@ public class AppTest {
         List<Integer> b4 = Arrays.asList(1, 3, 5, -1);
         assertEquals(60, simpleFunctions.sumElementsByIndexes(a4, b4));
     }
+    // Test Cases for task 5
+
+
+public class SimpleFunctionsTest {
+
+    @Test
+    public void testTask5Sorted() {
+        // Arrange
+        List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+
+        // Act
+        boolean result = SimpleFunctions.Task5(sortedList);
+
+        // Assert
+        assertTrue(result, "List should be considered sorted");
+    }
+
+    @Test
+    public void testTask5NotSorted() {
+        // Arrange
+        List<Integer> unsortedList = Arrays.asList(5, 3, 1, 2, 4);
+
+        // Act
+        boolean result = SimpleFunctions.Task5(unsortedList);
+
+        // Assert
+        assertFalse(result, "List should not be considered sorted");
+    }
+}
+ 
 }
