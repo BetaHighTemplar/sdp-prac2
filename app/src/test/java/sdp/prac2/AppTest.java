@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import sdp.prac2.SimpleFunctions;
+
 
 public class AppTest {
 
@@ -111,4 +111,34 @@ public class AppTest {
     }
     
      
+
+// Test Cases for task 5
+public void testTask5Sorted() {
+    // Arrange
+    List<Integer> sortedList = Arrays.asList(1, 2, 3, 4, 5);
+    SimpleFunctions simpleFunctions = new SimpleFunctions(); // Create an instance
+
+    // Act
+    boolean result = simpleFunctions.Task5(sortedList); // Call non-static method using instance
+
+    // Assert
+    assertTrue(result, "List should be considered sorted");
 }
+
+@Test
+public void testTask5NotSorted() {
+    // Arrange
+    List<Integer> unsortedList = Arrays.asList(5, 3, 1, 2, 4);
+    SimpleFunctions simpleFunctions = new SimpleFunctions(); // Create an instance
+
+    // Act
+    boolean result = simpleFunctions.Task5(unsortedList); // Call non-static method using instance
+
+    // Assert
+    assertFalse(result, "List should not be considered sorted");
+}
+
+}
+
+
+
